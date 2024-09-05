@@ -9,6 +9,6 @@ import (
 
 func main() {
 	fmt.Println(helloworld.Hello("Chris", ""))
-	repeated := iteration.Repeat("k")
+	repeated := iteration.Repeat("k", 10)
 	log.Print("repeated: ", repeated)
 }
