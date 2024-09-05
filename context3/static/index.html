@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html><script>
+const controller = new AbortController(); // Create an AbortController to manage the request
+
+// Trigger fetch request
+fetch("/data", { signal: controller.signal })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(err => {
+    if (err.name === 'AbortError') {
+      console.log("Request canceled");
+    } else {
+      console.error("Fetch error:", err);
+    }
+  });
+
+// Simulate user navigating away after 5 seconds
+setTimeout(() => {
+  console.log("User navigated away, canceling request");
+  controller.abort(); // Cancel the request
+}, 5000);
+</script>
