@@ -1,26 +1,10 @@
 package main
 
-import "fmt"
-
-const englishHelloPrefix = "Hello, "
-const spanishHelloPrefix = "Hola, "
-const frenchHelloPrefix = "Bonjour, "
-const spanish = "Spanish"
-const french = "French"
-
-func Hello(name string, language string) string {
-	if name == "" {
-		return englishHelloPrefix + "World"
-	}
-	if language == spanish {
-		return spanishHelloPrefix + name
-	}
-	if language == french {
-		return frenchHelloPrefix + name
-	}
-	return englishHelloPrefix + name
-}
+import (
+	"fmt"
+	"golearning/helloworld"
+)
 
 func main() {
-	fmt.Println(Hello("Chris", ""))
+	fmt.Println(helloworld.Hello("Chris", ""))
 }
