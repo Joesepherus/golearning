@@ -1,6 +1,8 @@
 package main
 
-import "golearning/context3"
+import (
+	"golearning/goroutines"
+)
 
 func main() {
 	// fmt.Println(helloworld.Hello("Chris", ""))
@@ -9,5 +11,6 @@ func main() {
 	// arrays.Slices()
 	// arrays.DeepCopy()
 	// arrays.DeepCopy2()
-	context3.Start()
+	// context3.Start()
+	goroutines.Start2()
 }
