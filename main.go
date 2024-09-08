@@ -1,8 +1,6 @@
 package main
 
-import (
-	"golearning/goroutines"
-)
+import "golearning/dependencyinjection2"
 
 func main() {
 	// fmt.Println(helloworld.Hello("Chris", ""))
@@ -12,5 +10,7 @@ func main() {
 	// arrays.DeepCopy()
 	// arrays.DeepCopy2()
 	// context3.Start()
-	goroutines.Start2()
+	// goroutines.Start2()
+	// dependencyinjection.Greet(os.Stdout, "Elodie")
+	dependencyinjection2.Setup()
 }
