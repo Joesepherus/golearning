@@ -1,6 +1,8 @@
 package main
 
-import "golearning/functional"
+import (
+	"golearning/sets"
+)
 
 func main() {
 	// fmt.Println(helloworld.Hello("Chris", ""))
@@ -13,5 +15,6 @@ func main() {
 	// goroutines.Start2()
 	// dependencyinjection.Greet(os.Stdout, "Elodie")
 	// dependencyinjection2.Setup()
-	functional.Run5()
+	// functional.Run5()
+	sets.Run()
 }
