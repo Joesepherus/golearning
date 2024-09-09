@@ -1,7 +1,7 @@
 package main
 
 import (
-	"golearning/functions"
+	"golearning/garbagecollector"
 )
 
 func main() {
@@ -17,5 +17,6 @@ func main() {
 	// dependencyinjection2.Setup()
 	// functional.Run5()
 	// sets.Run()
-	functions.Run()
+	// functions.Run()
+	garbagecollector.Run()
 }
