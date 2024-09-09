@@ -1,7 +1,7 @@
 package main
 
 import (
-	"golearning/sets"
+	"golearning/controlflows"
 )
 
 func main() {
@@ -16,5 +16,6 @@ func main() {
 	// dependencyinjection.Greet(os.Stdout, "Elodie")
 	// dependencyinjection2.Setup()
 	// functional.Run5()
-	sets.Run()
+	// sets.Run()
+	controlflows.Run()
 }
