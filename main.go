@@ -1,7 +1,7 @@
 package main
 
 import (
-	"golearning/garbagecollector"
+	"golearning/editor"
 )
 
 func main() {
@@ -18,5 +18,9 @@ func main() {
 	// functional.Run5()
 	// sets.Run()
 	// functions.Run()
-	garbagecollector.Run()
+	// garbagecollector.Run()
+	// logger.Run()
+	// payment.Run()
+	// example.Run()
+	editor.Run()
 }
