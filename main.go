@@ -1,7 +1,7 @@
 package main
 
 import (
-	"golearning/editor"
+	"golearning/fetchemails"
 )
 
 func main() {
@@ -22,5 +22,5 @@ func main() {
 	// logger.Run()
 	// payment.Run()
 	// example.Run()
-	editor.Run()
+	fetchemails.Run()
 }
