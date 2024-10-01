@@ -31,9 +31,15 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 	clients[conn] = true
 	log.Println("clients", clients)
 
+	if err := conn.WriteMessage(websocket.TextMessage, inputValue); err != nil {
+		conn.Close()
+		delete(clients, conn)
+	}
+
 	for {
 		// Read message from client
 		_, msg, err := conn.ReadMessage()
+		inputValue = msg
 		if err != nil {
 			delete(clients, conn)
 			break
@@ -41,13 +47,15 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 
 		// Broadcast message to all clients
 		for client := range clients {
-			if err := client.WriteMessage(websocket.TextMessage, msg); err != nil {
+			if err := client.WriteMessage(websocket.TextMessage, inputValue); err != nil {
 				client.Close()
 				delete(clients, client)
 			}
 		}
 	}
 }
+
+var inputValue []byte
 
 func Run() {
 	http.HandleFunc("/", home)

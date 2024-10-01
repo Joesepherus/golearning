@@ -19,6 +19,10 @@
             editor.value = event.data; // Update the editor with the new content
         };
 
+        ws.onopen = (event) => {
+            editor.value = event.data; // Update the editor with the new content
+        }
+
         editor.addEventListener("input", () => {
             ws.send(editor.value); // Send current content to server
         });
