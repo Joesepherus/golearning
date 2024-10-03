@@ -1,7 +1,10 @@
 package main
 
 import (
-	"golearning/fetchemails"
+	"golearning/algorithms/bfs"
+	"golearning/algorithms/bfsStruct"
+	"golearning/algorithms/dfs"
+	"golearning/algorithms/dfsStruct"
 )
 
 func main() {
@@ -22,5 +25,9 @@ func main() {
 	// logger.Run()
 	// payment.Run()
 	// example.Run()
-	fetchemails.Run()
+	// fetchemails.Run()
+	dfs.Run()
+	dfsStruct.Run()
+	bfs.Run()
+	bfsStruct.Run()
 }
