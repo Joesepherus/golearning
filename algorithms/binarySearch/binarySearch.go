@@ -13,6 +13,9 @@ func Run() {
 
 	res := binarySearch(arr, value)
 	fmt.Printf("res %d\n\n\n", res)
+
+	res = binarySearchProper(arr, value)
+	fmt.Println("res", res)
 }
 
 func binarySearch(arr []int, value int) int {
@@ -39,4 +42,25 @@ func binarySearch(arr []int, value int) int {
 	}
 
 	return -1
+}
+
+func binarySearchProper(arr []int, target int) int {
+	start, end := 0, len(arr)-1
+
+	for start <= end {
+		mid := start + (end-start)/2 // To avoid overflow
+		fmt.Println("mid", mid)
+		fmt.Println("start, end ", start, end)
+		fmt.Println("arr arr[mid], value", arr[start:end+1], arr[mid], target)
+
+		if arr[mid] == target {
+			return mid
+		} else if arr[mid] < target {
+			start = mid + 1
+		} else {
+			end = mid - 1
+		}
+	}
+
+	return -1 // Target not found
 }
