@@ -1,8 +1,6 @@
 package main
 
-import (
-	"golearning/algorithms/binarySearch"
-)
+import "golearning/algorithms/binarySearchTree"
 
 func main() {
 	// fmt.Println(helloworld.Hello("Chris", ""))
@@ -27,5 +25,6 @@ func main() {
 	// dfsStruct.Run()
 	// bfs.Run()
 	// bfsStruct.Run()
-	binarySearch.Run()
+	// binarySearch.Run()
+	binarySearchTree.Run()
 }
