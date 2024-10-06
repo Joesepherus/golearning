@@ -1,10 +1,7 @@
 package main
 
 import (
-	"golearning/algorithms/bfs"
-	"golearning/algorithms/bfsStruct"
-	"golearning/algorithms/dfs"
-	"golearning/algorithms/dfsStruct"
+	"golearning/algorithms/binarySearch"
 )
 
 func main() {
@@ -26,8 +23,9 @@ func main() {
 	// payment.Run()
 	// example.Run()
 	// fetchemails.Run()
-	dfs.Run()
-	dfsStruct.Run()
-	bfs.Run()
-	bfsStruct.Run()
+	// dfs.Run()
+	// dfsStruct.Run()
+	// bfs.Run()
+	// bfsStruct.Run()
+	binarySearch.Run()
 }
