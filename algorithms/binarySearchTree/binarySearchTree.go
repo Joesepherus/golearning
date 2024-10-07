@@ -65,16 +65,19 @@ func Run() {
 
 	fmt.Println("Delete 1:")
 
-	delete(8, tree.root)
+	deleteNode(6, &tree.root)
+
 	myQueue.Enqueue(tree.root)
 
+	fmt.Println("levelOrderTraversal START")
 	levelOrderTraversal()
+	fmt.Println("levelOrderTraversal END")
 
 	insert(&Node{value: 2}, tree.root)
 	insert(&Node{value: 5}, tree.root)
 	fmt.Println("Root:", tree.root.left.left.right)
 
-	search2, _ := search(51, tree.root, nil)
+	search2 := search(51, tree.root)
 	fmt.Println("search2", search2)
 
 }
@@ -201,22 +204,56 @@ func delete(value int, node *Node) *Node {
 	return node // Return the (possibly updated) node
 }
 
-func search(value int, node *Node, parent *Node) (*Node, *Node) {
+func findLeftMost(node *Node) *Node {
+	if node.left == nil {
+		return node
+	}
+	return findLeftMost(node.left)
+}
+
+func reconnect(node *Node) *Node {
+	if node.left == nil {
+		return node.right
+	}
+	if node.right == nil {
+		return node.left
+	}
+	var point *Node = findLeftMost(node.right)
+	point.left = node.left
+
+	return node.right
+}
+
+func deleteNode(value int, node **Node) {
+	if node == nil {
+		return
+	}
+
+	if value < (*node).value {
+		deleteNode(value, &(*node).left)
+	} else if value > (*node).value {
+		deleteNode(value, &(*node).right)
+	} else {
+		*node = reconnect(*node)
+	}
+}
+
+func search(value int, node *Node) *Node {
 	fmt.Println("search value, node.value", value, node.value)
 	if value == node.value {
-		return node, parent
+		return node
 	}
 	if value < node.value {
 		if node.left != nil {
-			return search(value, node.left, node)
+			return search(value, node.left)
 		}
 	}
 	if value > node.value {
 		if node.right != nil {
-			return search(value, node.right, node)
+			return search(value, node.right)
 		}
 	}
-	return nil, nil
+	return nil
 }
 
 //	   8
