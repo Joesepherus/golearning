@@ -1,6 +1,8 @@
 package main
 
-import "golearning/algorithms/binarySearchTree"
+import (
+	"golearning/algorithms/minHeap"
+)
 
 func main() {
 	// fmt.Println(helloworld.Hello("Chris", ""))
@@ -26,5 +28,6 @@ func main() {
 	// bfs.Run()
 	// bfsStruct.Run()
 	// binarySearch.Run()
-	binarySearchTree.Run()
+	// binarySearchTree.Run()
+	minHeap.Run()
 }
