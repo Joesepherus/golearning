@@ -1,8 +1,6 @@
 package main
 
-import (
-	"golearning/algorithms/minHeap"
-)
+import "golearning/algorithms/dijkstra"
 
 func main() {
 	// fmt.Println(helloworld.Hello("Chris", ""))
@@ -29,5 +27,6 @@ func main() {
 	// bfsStruct.Run()
 	// binarySearch.Run()
 	// binarySearchTree.Run()
-	minHeap.Run()
+	// minHeap.Run()
+	dijkstra.Run()
 }
